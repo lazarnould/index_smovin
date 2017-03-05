@@ -8,8 +8,9 @@
   <%= f.input :indexation_year,wrapper_html: {class: 'wrap'}, label_html: { class: 'test' }, input_html: {class: 'try'}, collection: 2000..2017, label: "Année d'indexation" %>
   <%= f.input :region,wrapper_html: {class: 'wrap'}, label_html: { class: 'test' }, collection: ["Bruxelles-Capitale", "Région Wallonne", "Région Flamande"], input_html: {class: 'try'} %>
 
-
-  <%= f.button :submit, 'Indexez votre loyer', class: 'nav-button' %>
+  <div class="btn-try">
+    <%= f.button :submit, 'Indexez votre loyer', class: 'submit-btn' %>
+  </div>
 <% end %>
 
 

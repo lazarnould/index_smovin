@@ -1,5 +1,5 @@
 class LeasesController < ApplicationController
-  before_action :find_order_line, only: [:edit, :update, :generate_pdf, :destroy]
+  before_action :find_lease, only: [:edit, :update, :generate_pdf, :destroy]
 
   def new
     @lease = Lease.new

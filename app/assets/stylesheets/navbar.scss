@@ -13,6 +13,10 @@
   }
 }
 
+.logo:hover {
+  cursor: pointer;
+}
+
 .links {
   width: 500px;
   display: flex;
@@ -33,6 +37,10 @@
   border: #115E80;
   background-color: #115E80;
   color:white;
+}
+
+.nav-button:hover {
+  cursor: pointer;
 }
 
 // .nav_link {
