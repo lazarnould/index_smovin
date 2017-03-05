@@ -1,0 +1,23 @@
+ <%= simple_form_for [@category,@product] do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :start_month %>
+  <%= f.input :start_year, collection: ["Men", "Women", "Accessory"] %>
+  <%= f.input :prod_type, collection: ["T-shirt", "Jacket", "Trouser", "Shorts", "Socks", "Cap", "Longshoreman", "Oversleeve", "Scarf"] %>
+  <%= f.input :price_cents %>
+  <%= f.input :description %>
+  <%= f.input :season %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+
+  <%= f.button :submit %>
+<% end %>
+
+               "signature_month"
+    t.integer  "signature_year"
+    t.integer  "start_month"
+    t.integer  "start_year"
+    t.integer  "indexation_year"
+    t.string   "region"
+    t.integer  "landlord_id"
+    t.integer  "tenant_id"
