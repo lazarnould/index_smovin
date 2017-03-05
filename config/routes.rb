@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'leases/new_lease'
+  root to: 'leases#new'
+  resources :leases, only: [:new, :create,:edit, :update]
 
-  get 'leases/new_landlord'
-
-  get 'leases/new_tenant'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,85 @@
+.navbar {
+  height: 72px;
+  width:960px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    text-decoration: none;
+  };
+  a:visited {
+    color: #115E80;
+  }
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.links {
+  width: 500px;
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
+  color: #115E80;
+}
+
+.nav-button {
+  width: 110px;
+  height: 41px;
+  z-index: 36;
+  line-height: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Ubuntu;
+  border-radius: 5px;
+  border: #115E80;
+  background-color: #115E80;
+  color:white;
+}
+
+.nav-button:hover {
+  cursor: pointer;
+}
+
+// .nav_link {
+//   height: 72px;
+//   display: flex;
+//   align-items: center
+// }
+
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #115E80;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
