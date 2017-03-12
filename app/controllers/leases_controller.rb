@@ -7,9 +7,11 @@ class LeasesController < ApplicationController
 
   def create
     @lease = Lease.new(lease_params)
+    # get data from pdf
     start_date = "#{@lease.start_month} #{@lease.start_year}"
     sign_index = "blabla from pdf"
     current_index = "blabla from pdf"
+    # method for indexation
     indexation = index(@lease.rent, current_index, sign_index)
     @lease.new_rent = indexation
     @lease.save
@@ -35,7 +37,8 @@ class LeasesController < ApplicationController
     i = rent.to_f
     j = new_index.to_f
     k = signature_index.to_f
-    i * j / k
+    new_index = i * j / k
+    return new_index
   end
 
   private
