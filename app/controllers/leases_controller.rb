@@ -56,3 +56,16 @@ class LeasesController < ApplicationController
   end
 
 end
+
+
+# if @lease.region == "Région Wallonne"
+#         base_year = @lease.indexation_year - 1
+#         base_month = @lease.start_month - 1
+#         if base_month == 12
+#           base_month = 11
+#         end
+#         current_date = x.strftime("%B") + " " + Date.today.year.to_s
+#         current_index = data_hash[current_date]
+#       else
+
+#       end
