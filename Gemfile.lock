@@ -170,6 +170,7 @@ DEPENDENCIES
   font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
+  json
   pg
   pry-byebug
   pry-rails
