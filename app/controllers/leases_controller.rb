@@ -42,8 +42,11 @@ class LeasesController < ApplicationController
     # method for indexation
       indexation = index(@lease.rent, current_index, sign_index)
       @lease.new_rent = indexation
-      @lease.save
-      redirect_to edit_lease_path(@lease)
+      if @lease.save
+        redirect_to edit_lease_path(@lease)
+      else
+        render :new
+      end
   end
 
   def edit
@@ -66,7 +69,7 @@ class LeasesController < ApplicationController
     j = new_index.to_f
     k = signature_index.to_f
     new_index = i * j / k
-    return new_index
+
   end
 
   private

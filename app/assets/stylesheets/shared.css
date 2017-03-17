@@ -21,7 +21,11 @@
 }
 .btn-smovehouse:hover {
   opacity: 1;
-  background: #3ac162;
+  background-color: #1C6FAA;
   text-decoration: none;
   color: white;
+}
+
+.button-center {
+  text-align: center;
 }
