@@ -1,5 +1,5 @@
 class LeasesController < ApplicationController
-  before_action :find_lease, only: [:edit, :update, :generate_pdf, :destroy]
+  before_action :find_lease, only: [:edit, :update, :show, :generate_pdf, :destroy]
 
   def new
     @lease = Lease.new
@@ -56,6 +56,9 @@ class LeasesController < ApplicationController
     @lease.update(lease_params)
   end
 
+  def show
+  end
+
   def generate_pdf
     # blabla method to generate the pdf on base of
   end
@@ -69,7 +72,6 @@ class LeasesController < ApplicationController
     j = new_index.to_f
     k = signature_index.to_f
     new_index = i * j / k
-
   end
 
   private
