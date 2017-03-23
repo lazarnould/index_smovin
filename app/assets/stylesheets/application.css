@@ -12,7 +12,32 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
 
 @import 'leases/index'
 @import 'shared/index'
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+
+}
+p {
+  font-family: 'Ubuntu', sans-serif;
+
+}
+label {
+  font-family: 'Ubuntu', sans-serif;
+
+}
+div {
+  font-family: 'Ubuntu', sans-serif;
+
+}
+button {
+  font-family: 'Ubuntu', sans-serif;
+
+}

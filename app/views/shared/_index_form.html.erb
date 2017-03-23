@@ -1,17 +1,48 @@
  <%= simple_form_for(@lease) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :rent, :precision => 2, label_html: { class: 'test' }, wrapper_html: {class: 'wrap'}, label: 'Loyer initial', input_html: {class: 'try'} , key: '€'%>
-  <%= f.input :signature_month, wrapper_html: {class: 'inline_fields wrap'}, label_html: { class: 'test' }, collection: 1..12, input_html: {class: 'try'}, label: 'Date de signature du bail' %>
-  <%= f.input :signature_year, wrapper_html: {class: 'inline_fields wrap'},label_html: { class: 'test' }, collection: 2000..2017, input_html: {class: ''}, label: false %>
-  <%= f.input :start_month, wrapper_html: {class: 'inline_fields'}, collection: 1..12, label_html: { class: 'test' }, input_html: {class: 'inline-margin '}, label: "Date d'entrée en vigueur du bail" %>
-  <%= f.input :start_year,wrapper_html: {class: 'inline_fields wrap'}, input_html: {class: ''}, collection: 2000..2017, label: false %>
-  <%= f.input :indexation_year,wrapper_html: {class: 'wrap'}, label_html: { class: 'test' }, input_html: {class: 'try'}, collection: 2000..2017, label: "Année d'indexation" %>
-  <%= f.input :region,wrapper_html: {class: 'wrap'}, label_html: { class: 'test' }, collection: ["Bruxelles-Capitale", "Région Wallonne", "Région Flamande"], input_html: {class: 'try'} %>
-
-  <div class="btn-try">
-    <%= f.button :submit, 'Indexez votre loyer', class: 'submit-btn' %>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.input :rent, :precision => 2, label_html: { class: 'test' }, wrapper_html: {class: 'wrap'}, label: 'Loyer initial', input_html: {class: 'try'} , key: '€'%>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.input :signature_month, collection: 1..12, label: 'Mois de signature du bail' %>
+    </div>
+    <div class="large-6 columns">
+       <%= f.input :signature_year, collection: 2000..2017, label: 'Année de signature du bail' %>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.input :start_month, collection: 1..12, label: "Mois d'entrée en vigueur du bail" %>
+    </div>
+    <div class="large-6 columns">
+      <%= f.input :start_year, collection: 2000..2017, label: "Année d'entrée en vigueur du bail" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+       <%= f.input :indexation_year,collection: 2000..2017, label: "Année d'indexation" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+       <%= f.input :region, collection: ["Bruxelles-Capitale", "Région Wallonne", "Région Flamande"], label: "Région"%>
+    </div>
+  </div>
+
+  <%= f.button :submit, "Calculez l'indexation", class: "submit-btn btn-try" %>
+
 <% end %>
+
+
 
 
 <!-- label_html: { class: 'test' } -->

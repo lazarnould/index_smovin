@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 .left-terms {
@@ -20,7 +21,7 @@
 }
 
 .right-terms {
-  max-width: 250px;
+  min-width: 250px;
   padding: 10px 0;
 }
 
@@ -30,13 +31,15 @@
 }
 
 .maths {
-  padding: 20px 50px !important;
+  padding: 10px 35px !important;
   border-radius: 5px;
+  border: 1px solid #768CA2;
   background-color: white;
+  padding-bottom: 25px !important;
 }
 
 .body-wrap {
-  background-color: #f1f1f1;
+  background-color: white;
   padding: 20px;
   margin-bottom: 10px;
 }
@@ -51,7 +54,7 @@
 
 .edit-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin-bottom: 20px;
 }
