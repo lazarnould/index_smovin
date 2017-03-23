@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170322230532) do
+ActiveRecord::Schema.define(version: 20170323211842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,12 +39,13 @@ ActiveRecord::Schema.define(version: 20170322230532) do
     t.string   "region"
     t.integer  "landlord_id"
     t.integer  "tenant_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.decimal  "new_rent"
     t.decimal  "rent"
     t.decimal  "current_index"
     t.decimal  "sign_index"
+    t.string   "indexation_start"
   end
 
   add_index "leases", ["landlord_id"], name: "index_leases_on_landlord_id", using: :btree
