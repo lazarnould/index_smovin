@@ -1,11 +1,15 @@
-.form-container {
-  margin: 20px auto;
-  padding: 30px;
+.form-container-2 {
+  margin:  30px auto;
   border-radius: 4px;
   // border: 1px solid #f1f1f1;
   background-color: white;
   display: block !important;
-  max-width:520px;
+  max-width:547px;
+}
+
+.title {
+  max-width: 520px;
+  margin: 20px auto;
 }
 
 .test {
@@ -50,7 +54,7 @@ p {
   line-height: 16px;
   font-size: 14px;
   font-weight: 400;
-  font-family: Ubuntu;
+  border-radius: 2px;
   border: #115E80;
   background-color: #115E80;
   color:white;
