@@ -14,5 +14,5 @@
  *= require_self
  */
 
-@import 'shared/index'
 @import 'leases/index'
+@import 'shared/index'
