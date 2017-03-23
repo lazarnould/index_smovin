@@ -7,6 +7,7 @@ class LeasesController < ApplicationController
 
   def create
     @lease = Lease.new(lease_params)
+    @lease.indexation_start = Date::MONTHNAMES[@lease.signature_month] + " " + Date.today.year.to_s
     sign_month = Date::MONTHNAMES[@lease.start_month]
     # get data from json
       file = File.read('app/assets/datas/health_indices.json')
