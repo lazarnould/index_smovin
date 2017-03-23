@@ -1,0 +1,28 @@
+.result-wrapper {
+  min-width: 500px;
+  margin:  auto;
+}
+
+.sub-title {
+  text-align: center;
+  color: #115E80;
+}
+
+.flex-terms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-terms {
+  flex: 1;
+}
+
+.right-terms {
+  flex: 1;
+}
+
+.tarif {
+  margin: 10px 0;
+  text-align: center;
+}

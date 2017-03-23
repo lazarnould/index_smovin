@@ -4,24 +4,25 @@
 <div class="form-container">
   <%=render 'shared/index_form'%>
 </div>
-
-<h2>Calcul</h2>
-<div class="flex-terms">
-  <div class="left-terms">
-    <div class="new-rent">
-      <h1 style="margin-bottom: 20px">Loyer indexé: <%=@lease.new_rent.round(2)%>€ </h1>
+<div class="form-container">
+  <h2 class="sub-title">Calcul</h2>
+  <div class="flex-terms">
+    <div class="left-terms">
+      <div class="new-rent">
+        <p>Loyer indexé: <%=@lease.new_rent.round(2)%>€ </p>
+      </div>
+      <div class="index-year">
+        Quid
+      </div>
     </div>
-    <div class="index-year">
-
+    <div class="right-terms">
+      <div class="start-index"><%=@lease.sign_index%></div>
+      <div class="current-index"><%=@lease.current_index%></div>
     </div>
   </div>
-  <div class="right-terms">
-    <div class="start-index"></div>
-    <div class="current-index"></div>
-  </div>
+  <div class="edit-buttons"></div>
+  <p class="tarif">10€</p>
 </div>
-<div class="edit-buttons"></div>
-<p>10€</p>
 <!-- <div class="button-center">
   <button class="btn-smovehouse" >#JustSmoveIt</button>
 </div> -->
