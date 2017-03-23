@@ -1,6 +1,6 @@
  <%= simple_form_for(@lease) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :rent, label_html: { class: 'test' }, wrapper_html: {class: 'wrap'}, label: 'Loyer initial', input_html: {class: 'try'} , key: '€'%>
+  <%= f.input :rent, :precision => 2, label_html: { class: 'test' }, wrapper_html: {class: 'wrap'}, label: 'Loyer initial', input_html: {class: 'try'} , key: '€'%>
   <%= f.input :signature_month, wrapper_html: {class: 'inline_fields wrap'}, label_html: { class: 'test' }, collection: 1..12, input_html: {class: 'try'}, label: 'Date de signature du bail' %>
   <%= f.input :signature_year, wrapper_html: {class: 'inline_fields wrap'},label_html: { class: 'test' }, collection: 2000..2017, input_html: {class: ''}, label: false %>
   <%= f.input :start_month, wrapper_html: {class: 'inline_fields'}, collection: 1..12, label_html: { class: 'test' }, input_html: {class: 'inline-margin '}, label: "Date d'entrée en vigueur du bail" %>

@@ -1,6 +1,38 @@
-<h1 style="margin-bottom: 20px">Loyer indexé: <%=@lease.new_rent%>€ </h1>
-<button class="btn-smovehouse" >#JustSmoveIt</button>
-
-<div style="width: 480px; margin: auto" >
-<iframe src="//giphy.com/embed/26gsl2WC5tRxkemdi" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/salt-bae-26gsl2WC5tRxkemdi">via GIPHY</a></p>
+<div class="body-wrap">
+  <div class="form-container maths">
+    <h2 class="sub-title">Calcul</h2>
+    <div class="flex-terms">
+      <div class="left-terms">
+        <div class="new-rent">
+          <p>Loyer indexé: <%=@lease.new_rent.round(2)%>€ </p>
+        </div>
+        <div class="index-year">
+          Quid
+        </div>
+      </div>
+      <div class="right-terms">
+        <div class="start-index">
+          Nouvel Indice: <%=@lease.sign_index%>
+        </div>
+        <div class="current-index">
+          Indice Actuel: <%=@lease.current_index%>
+        </div>
+      </div>
+    </div>
+    <div class="edit-buttons">
+      <button class="btn-smovehouse">Recevoir la lettre par email</button>
+      <button class="btn-smovehouse">Envoyer un recommandé au locataire</button>
+    </div>
+    <p class="tarif">10€</p>
+  </div>
 </div>
+
+
+<h1>Indexez votre loyer</h1>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+<div class="form-container">
+  <%=render 'shared/index_form'%>
+</div>
+<!-- <div class="button-center">
+  <button class="btn-smovehouse" >#JustSmoveIt</button>
+</div> -->

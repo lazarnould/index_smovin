@@ -13,5 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import 'navbar'
-@import 'shared'
+
+@import 'leases/index'
+@import 'shared/index'

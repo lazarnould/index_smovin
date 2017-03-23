@@ -16,12 +16,19 @@
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: #115E80;
+  background: #6FA8DC;
   transition: background 0.3s ease;
+  border-color: transparent;
+  margin-top: 20px;
 }
 .btn-smovehouse:hover {
   opacity: 1;
-  background: #3ac162;
+  background-color: #1C6FAA;
   text-decoration: none;
   color: white;
+  cursor: pointer;
+}
+
+.button-center {
+  text-align: center;
 }

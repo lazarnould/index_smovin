@@ -1,0 +1,57 @@
+.result-wrapper {
+  min-width: 500px;
+  margin:  auto;
+}
+
+.sub-title {
+  text-align: center;
+  color: #115E80;
+}
+
+.flex-terms {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-terms {
+  max-width: 250px;
+  padding: 10px 0;
+}
+
+.right-terms {
+  max-width: 250px;
+  padding: 10px 0;
+}
+
+.tarif {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.maths {
+  padding: 20px 50px !important;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.body-wrap {
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.new-rent {
+  margin-bottom: 20px;
+}
+
+.start-index {
+  margin-bottom: 20px;
+}
+
+.edit-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
