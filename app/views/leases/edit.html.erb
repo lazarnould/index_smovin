@@ -1,29 +1,39 @@
+<h1 style="margin-top: 20px;"> L'Indexation de votre loyer</h1>
 <div class="body-wrap">
-  <div class="form-container-2 maths">
-    <h2 class="sub-title">Calcul</h2>
-    <div class="flex-terms">
-      <div class="left-terms">
-        <div class="new-rent">
-          <p>Loyer indexé: <%=@lease.new_rent.round(2)%>€ </p>
-        </div>
-        <div class="index-year">
-          A partir de: <%=@lease.indexation_start%>
-        </div>
-      </div>
-      <div class="right-terms">
-        <div class="start-index">
-          Indice <%=Date::MONTHNAMES[@lease.signature_month]%> <%=@lease.signature_year%> : <%=@lease.sign_index%>
-        </div>
-        <div class="current-index">
-          Indice Actuel: <%=@lease.current_index%>
-        </div>
-      </div>
-    </div>
-    <div class="edit-buttons">
-      <button class="submit-btn">Recevoir la lettre par email</button>
+  <div class="result-container">
+<!--     <div class="title"> -->
+<!--       <h2 style="color: #115E80">Calcul</h2> -->
+<!--     </div> -->
+    <div class="shit-shit-shit">
+            <div class="test-design">
+              <div class="index-year">
+                  A partir de
+                  <div class="calendar">
+                    <div class="calendar-top"><%=@lease.indexation_start.split(' ')[0]%></div>
+                    <div class="calendar-bottom"><%=@lease.indexation_start.split(' ')[1]%></div>
+                  </div>
+                </div>
+            <div class="head-container">
+              <div class="sub-title">Loyer indexé</div>
+              <div class="new-rent"><%=@lease.new_rent.round(2)%>€</div>
+            </div>
+            </div>
+
+            <div class="edit-buttons">
+                <div>
+                  Indice <%=Date::MONTHNAMES[@lease.signature_month]%> <%=@lease.signature_year%>: <%=@lease.sign_index%>
+                </div>
+                <div class="second-terms">
+                    Indice Actuel: <%=@lease.current_index%>
+                </div>
+
+
+            </div>
+            <!-- <button class="submit-btn">Recevoir la lettre par email</button> -->
     </div>
   </div>
 </div>
+
 
 
 <h1>Faites un nouveau calcul</h1>

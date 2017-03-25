@@ -3,12 +3,6 @@
   margin:  auto;
 }
 
-.sub-title {
-  text-align: center;
-  color: #115E80;
-  margin-bottom: 20px;
-}
-
 .flex-terms {
   display: flex;
   justify-content: space-between;
@@ -16,33 +10,24 @@
   padding-bottom: 10px;
 }
 
-.left-terms {
-  max-width: 250px;
+.first-terms {
+  max-width: 150px;
   padding: 10px 0;
 }
 
-.right-terms {
-  min-width: 250px;
+.second-terms {
+  min-width: 150px;
+  padding: 10px 0;
+}
+
+.third-terms {
+  min-width: 150px;
   padding: 10px 0;
 }
 
 .tarif {
   margin: 10px 0;
   text-align: center;
-}
-
-.maths {
-  padding: 10px 35px !important;
-  border-radius: 5px;
-  border: 2px solid #768CA2;
-  background-color: white;
-  padding-bottom: 25px !important;
-}
-
-.body-wrap {
-  background-color: white;
-  padding: 20px;
-  margin-bottom: 10px;
 }
 
 .new-rent {
@@ -55,7 +40,86 @@
 
 .edit-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
+
+.calendar {
+  height: 60px;
+  width: 75px;
+  border: 1px solid #115E80;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+.calendar-top {
+  height: 20px;
+  background-color: #115E80;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.calendar-bottom {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+.test-design {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-rent {
+    margin-left: 21px;
+    font-size: 2.5em;
+    text-align: end;
+}
+
+
+.body-wrap {
+  background-color: white;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center
+}
+.result-container {
+  min-width: 550px;
+  margin-bottom: 20px;
+}
+.result-container-2 {
+  min-width: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.shit-shit-shit {
+  margin-left: 20px;
+  width: inherit;
+}
+
+.title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: inherit;
+}
+
+.sub-title {
+  color: #115E80;
+  font-size: 2.5em;
+  text-align: end;
+}
+
+.head-container {
+  padding-top: 27px;
+}
+
