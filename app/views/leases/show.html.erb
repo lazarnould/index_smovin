@@ -1,0 +1,43 @@
+<h5 style="margin-top: 50px; margin-bottom: 50px; margin-left:13px; text-align: center;">Pour préparer votre lettre/recommandé nous avons besoin d'informations complémentaires</h5>
+
+<div class="body-wrap">
+  <div class="results">
+    <div class="new-rent-2"><%=@lease.new_rent.round(2)%>€</div>
+    <div class="sub-title-2">Loyer indexé</div>
+    <div class="flex-items">
+      <div class="current-index">
+        <div class="new-index">
+          <%=@lease.current_index%>
+        </div>
+        <div class="sub-title-3">Indice Actuel</div>
+      </div>
+      <div class="index-from">
+        <div class="index-year">
+          A partir de
+          <div class="calendar">
+            <div class="calendar-top"><%=@lease.indexation_start.split(' ')[0]%></div>
+            <div class="calendar-bottom"><%=@lease.indexation_start.split(' ')[1]%></div>
+          </div>
+        </div>
+      </div>
+      <div class="old-index">
+        <div class="new-index">
+          <%=@lease.sign_index%>
+        </div>
+        <div class="sub-title-3">Indice Signature</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="body-wrap">
+  <div class="flex-items">
+    <div class="landlord-form">
+      <h4 style="text-align: center; color: #115E80">Vos informations</h4>
+      <%=render 'shared/index_form'%></div>
+    <div class="renter-form">
+      <h4 style="text-align: center; color: #115E80">Les informations de votre locataire</h4>
+      <%=render 'shared/index_form'%>
+    </div>
+  </div>
+</div>
