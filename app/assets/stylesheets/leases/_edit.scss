@@ -122,4 +122,53 @@
 .head-container {
   padding-top: 27px;
 }
+.results {
+  min-width: 771px;
+}
+
+.sub-title-2 {
+  color: #115E80;
+  font-size: 43px;
+  text-align: center;
+  margin-top: -26px;
+  margin-left: 16px;
+}
+
+.new-rent-2 {
+  margin-left: 21px;
+  font-size: 67px;
+  text-align: center;
+}
+
+.sub-title-3 {
+  color: #115E80;
+  font-size: 23px;
+  text-align: center;
+}
+
+.new-index {
+  font-size: 40px;
+  text-align: center;
+}
+
+.flex-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 51px;
+  margin-bottom: 50px;
+}
+
+.current-index {
+  flex: 1;
+}
+.index-from {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.old-index {
+  flex: 1;
+}
+
 
