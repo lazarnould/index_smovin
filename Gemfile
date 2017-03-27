@@ -11,12 +11,13 @@ gem 'redis'
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 gem 'json'
+
 
 group :development, :test do
   gem 'binding_of_caller'
