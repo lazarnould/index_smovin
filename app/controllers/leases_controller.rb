@@ -54,7 +54,43 @@ class LeasesController < ApplicationController
   end
 
   def update
-    @lease.update(lease_params)
+    @lease.indexation_start = Date::MONTHNAMES[@lease.signature_month] + " " + Date.today.year.to_s
+    sign_month = Date::MONTHNAMES[@lease.start_month]
+    # get data from json
+      file = File.read('app/assets/datas/health_indices.json')
+      data_hash = JSON.parse(file)
+      # Define sign index
+        @lease.sign_index = data_hash[sign_month + " " + @lease.start_year.to_s]
+      # Define current index on base of the region of the lease
+        if @lease.region == "Région Wallonne"
+          base_year = @lease.indexation_year - 1
+          base_month = @lease.start_month - 1
+          if base_month == 0
+            changed_base_month = "December"
+            changed_base_year = base_year - 1
+            current_date = changed_base_month + " " + changed_base_year.to_s
+            @lease.current_index = data_hash[current_date]
+          else
+            changed_base_month = Date::MONTHNAMES[base_month]
+            current_date = changed_base_month + " " + base_year.to_s
+            @lease.current_index = data_hash[current_date]
+          end
+        else
+          base_month = @lease.start_month - 1
+          if base_month == 0
+            changed_base_month = "December"
+            base_year = @lease.indexation_year - 1
+            current_date = changed_base_month + " " + base_year.to_s
+            @lease.current_index = data_hash[current_date]
+          else
+            current_date = Date::MONTHNAMES[base_month] + " " + @lease.indexation_year.to_s
+            @lease.current_index = data_hash[current_date]
+          end
+        end
+    # method for indexation
+      indexation = index(@lease.rent, @lease.current_index, @lease.sign_index)
+      @lease.new_rent = indexation
+    @lease.update(lease_params, sign_index: @lease.sign_index, current_index: @lease.current_index, new_rent: @lease.new_rent)
   end
 
   def show
@@ -76,6 +112,45 @@ class LeasesController < ApplicationController
   end
 
   private
+
+  # def get_index(terms)
+  #   @lease.indexation_start = Date::MONTHNAMES[@lease.signature_month] + " " + Date.today.year.to_s
+  #   sign_month = Date::MONTHNAMES[@lease.start_month]
+  #   # get data from json
+  #     file = File.read('app/assets/datas/health_indices.json')
+  #     data_hash = JSON.parse(file)
+  #     # Define sign index
+  #       @lease.sign_index = data_hash[sign_month + " " + @lease.start_year.to_s]
+  #     # Define current index on base of the region of the lease
+  #       if @lease.region == "Région Wallonne"
+  #         base_year = @lease.indexation_year - 1
+  #         base_month = @lease.start_month - 1
+  #         if base_month == 0
+  #           changed_base_month = "December"
+  #           changed_base_year = base_year - 1
+  #           current_date = changed_base_month + " " + changed_base_year.to_s
+  #           @lease.current_index = data_hash[current_date]
+  #         else
+  #           changed_base_month = Date::MONTHNAMES[base_month]
+  #           current_date = changed_base_month + " " + base_year.to_s
+  #           @lease.current_index = data_hash[current_date]
+  #         end
+  #       else
+  #         base_month = @lease.start_month - 1
+  #         if base_month == 0
+  #           changed_base_month = "December"
+  #           base_year = @lease.indexation_year - 1
+  #           current_date = changed_base_month + " " + base_year.to_s
+  #           @lease.current_index = data_hash[current_date]
+  #         else
+  #           current_date = Date::MONTHNAMES[base_month] + " " + @lease.indexation_year.to_s
+  #           @lease.current_index = data_hash[current_date]
+  #         end
+  #       end
+  #   # method for indexation
+  #     indexation = index(@lease.rent, @lease.current_index, @lease.sign_index)
+  #     @lease.new_rent = indexation
+  # end
 
   def find_lease
     @lease = Lease.find(params[:id])

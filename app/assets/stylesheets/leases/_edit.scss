@@ -123,7 +123,7 @@
   padding-top: 27px;
 }
 .results {
-  min-width: 771px;
+  min-width: 1164px;
 }
 
 .sub-title-2 {
@@ -169,6 +169,13 @@
 }
 .old-index {
   flex: 1;
+}
+
+.pdf-it {
+  flex: 1;
+  h6 {
+    color: #115E80;
+  }
 }
 
 

@@ -1,39 +1,3 @@
-<h1 style="margin-top: 20px;">Votre Indexation</h1>
-<div class="body-wrap">
-  <div class="result-container">
-<!--     <div class="title"> -->
-<!--       <h2 style="color: #115E80">Calcul</h2> -->
-<!--     </div> -->
-    <div class="shit-shit-shit">
-            <div class="test-design">
-              <div class="index-year">
-                  A partir de
-                  <div class="calendar">
-                    <div class="calendar-top"><%=@lease.indexation_start.split(' ')[0]%></div>
-                    <div class="calendar-bottom"><%=@lease.indexation_start.split(' ')[1]%></div>
-                  </div>
-                </div>
-            <div class="head-container">
-              <div class="sub-title">Loyer indexé</div>
-              <div class="new-rent"><%=@lease.new_rent.round(2)%>€</div>
-            </div>
-            </div>
-
-            <div class="edit-buttons">
-                <div>
-                  Indice <%=Date::MONTHNAMES[@lease.signature_month]%> <%=@lease.signature_year%>: <%=@lease.sign_index%>
-                </div>
-                <div class="second-terms">
-                    Indice Actuel: <%=@lease.current_index%>
-                </div>
-
-
-            </div>
-            <!-- <button class="submit-btn">Recevoir la lettre par email</button> -->
-    </div>
-  </div>
-</div>
-
 <h1 style="margin-top: 20px; margin-bottom: 50px; margin-left:13px;">Votre Indexation</h1>
 
 <div class="body-wrap">
@@ -41,12 +5,6 @@
     <div class="new-rent-2"><%=@lease.new_rent.round(2)%>€</div>
     <div class="sub-title-2">Loyer indexé</div>
     <div class="flex-items">
-      <div class="current-index">
-        <div class="new-index">
-          <%=@lease.current_index%>
-        </div>
-        <div class="sub-title-3">Indice Actuel</div>
-      </div>
       <div class="index-from">
         <div class="index-year">
           A partir de
@@ -56,11 +14,23 @@
           </div>
         </div>
       </div>
+      <div class="current-index">
+        <div class="new-index">
+          <%=@lease.current_index%>
+        </div>
+        <div class="sub-title-3">Indice Actuel</div>
+      </div>
       <div class="old-index">
         <div class="new-index">
           <%=@lease.sign_index%>
         </div>
         <div class="sub-title-3">Indice Signature</div>
+      </div>
+      <div class="pdf-it">
+        <div class="button-center">
+          <button class="btn-smovehouse" >Génerer un Pdf</button>
+        </div>
+        <div class="sub-title-3"> Envoyez un recommandé au sujet de votre indexation à votre locataire </div >
       </div>
     </div>
   </div>
@@ -73,6 +43,4 @@
 <div class="form-container-2">
   <%=render 'shared/index_form'%>
 </div>
-<!-- <div class="button-center">
-  <button class="btn-smovehouse" >#JustSmoveIt</button>
-</div> -->
+
