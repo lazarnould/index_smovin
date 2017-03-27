@@ -37,8 +37,9 @@
        <%= f.input :region, collection: ["Bruxelles-Capitale", "Région Wallonne", "Région Flamande"], label: "Région"%>
     </div>
   </div>
-
-  <%= f.button :submit, "Calculez l'indexation", class: "submit-btn btn-try" %>
+  <div class="form-btn">
+    <%= f.button :submit, "Calculez l'indexation", class: "btn-smovehouse" %>
+  </div>
 
 <% end %>
 
