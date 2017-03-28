@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 gem 'json'
+gem "coffee-rails"
 
 
 group :development, :test do

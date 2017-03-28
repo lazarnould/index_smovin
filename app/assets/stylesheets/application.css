@@ -20,6 +20,7 @@
 
 @import 'leases/index'
 @import 'shared/index'
+@import 'settings'
 body {
   font-family: 'Ubuntu', sans-serif;
 }

@@ -1,4 +1,4 @@
-<h1 style="margin-top: 20px; margin-bottom: 50px; margin-left:13px;">Votre Indexation</h1>
+<h1 style="margin-top: 38px; margin-bottom: 50px; margin-left:13px;">Votre Indexation</h1>
 
 <div class="body-wrap">
   <div class="results">
@@ -28,7 +28,7 @@
       </div>
       <div class="pdf-it">
         <div class="button-center">
-          <button class="btn-smovehouse" data-toggle="modal" data-target="#myModal">Générez un pdf</button>
+          <button class="btn-smovehouse open-first">Générez un pdf</button>
         </div>
         <div class="sub-title-3"> Notification pour votre locataire </div >
       </div>
@@ -44,42 +44,63 @@
   <%=render 'shared/index_form'%>
 </div>
 
+  <!-- FIRST MODAL -->
+  <div class='reveal-modal' id='first-modal' data-reveal>
 
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Vos Informations</h4>
-      </div>
-      <div class="modal-body">
-        <div class="form-container-2">
-          <%=render 'shared/index_form'%>
-        </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-2">
-          Launch demo modal
-        </button>
-
-          <!-- Modal -->
-          <div class="modal fade" id="myModal-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Les informations de votre locataire</h4>
+                  <button type="button" class="close close-reveal-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Vos Informations</h4>
                 </div>
                 <div class="modal-body">
                   <div class="form-container-2">
                     <%=render 'shared/index_form'%>
                   </div>
+                  <!-- Button trigger modal -->
+                  <a class='open-second'>Click me!</a>
                 </div>
               </div>
             </div>
+  </div>
+
+
+  <!-- SECOND MODAL -->
+  <div class='reveal-modal' id='second-modal' data-reveal>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close close-reveal-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Les informations de votre locataire</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-container-2">
+            <%=render 'shared/index_form'%>
           </div>
+        </div>
       </div>
     </div>
+    <a class="close-reveal-modal">CLOSE</a>
   </div>
-</div>
+
+
+  <a class='open-first'>Click me!</a>
+
+  <script>
+    $('.open-first').on('click', function() {
+      var popup = new Foundation.Reveal($('#first-modal'));
+      popup.open();
+      $('.close-reveal-modal').on('click', function() {
+        popup.close();
+      });
+    });
+    $('.open-second').on('click', function() {
+      var popup = new Foundation.Reveal($('#second-modal'));
+      popup.open();
+      $('.close-reveal-modal').on('click', function() {
+        popup.close();
+      });
+    });
+
+  </script>
+
