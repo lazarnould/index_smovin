@@ -51,6 +51,8 @@ class LeasesController < ApplicationController
   end
 
   def edit
+    @tenant = Tenant.new
+    @landlord = Landlord.new
   end
 
   def update

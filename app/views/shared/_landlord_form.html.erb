@@ -1,15 +1,54 @@
- <%= simple_form_for [@category,@product] do |f| %>
+ <%= simple_form_for [@lease,@landlord] do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :name %>
-  <%= f.input :gender, collection: ["Men", "Women", "Accessory"] %>
-  <%= f.input :prod_type, collection: ["T-shirt", "Jacket", "Trouser", "Shorts", "Socks", "Cap", "Longshoreman", "Oversleeve", "Scarf"] %>
-  <%= f.input :price_cents %>
-  <%= f.input :description %>
-  <%= f.input :season %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.input :first_name, label: 'Prénom' %>
+    </div>
+    <div class="large-6 columns">
+       <%= f.input :last_name, label: 'Nom' %>
+    </div>
+  </div>
 
-  <%= f.button :submit %>
+  <div class="row">
+    <div class="large-8 columns">
+      <%= f.input :address, label: 'Adresse' %>
+    </div>
+    <div class="large-4 columns">
+       <%= f.input :number, label: 'Numéro' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-4 columns">
+      <%= f.input :zip, label: 'Prénom' %>
+    </div>
+    <div class="large-8 columns">
+       <%= f.input :locality, label: 'Nom' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-8 columns">
+       <%= f.input :baccount, label: 'Numéro de compte' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-8 columns">
+       <%= f.input :email, label: 'Email' %>
+    </div>
+  </div>
+
+  <div class="row" style= "padding-left: 21px;"">
+    <div class="large-8 columns">
+       <%= f.input :follower, type: 'checkbox', inline_label: 'Je souhaite être informé des nouvelles de Smovin' %>
+    </div>
+  </div>
+
+
+  <div class="btn">
+    <%= f.button :submit, "Etape suivante", class: "btn-smovehouse" %>
+  </div>
+
 <% end %>
-
