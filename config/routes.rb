@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'leases#new'
-  resources :leases, only: [:new, :create, :show]
+  resources :leases, only: [:new, :create, :show, :edit, :update]
   resources :leases, only: [:edit, :update] do
     resources :tenants, only:[:new, :create]
     resources :landlords, only: [:new, :create]
