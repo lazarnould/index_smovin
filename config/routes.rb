@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'landlords/create'
+
   root to: 'leases#new'
   resources :leases, only: [:new, :create, :show, :edit, :update]
   resources :leases, only: [:edit, :update] do
-    resources :tenants, only:[:new, :create]
-    resources :landlords, only: [:new, :create]
+    resources :tenants, only:[:create]
+    resources :landlords, only: [:create]
   end
 
 

@@ -1,4 +1,4 @@
- <%= simple_form_for [@lease,@landlord] do |f| %>
+ <%= simple_form_for([@lease,@landlord], remote: true) do |f| %>
   <%= f.error_notification %>
 
   <div class="row">
