@@ -1,13 +1,5 @@
 <% if @landlord.errors.any? %>
   // Render new landlord form with errors
   $('#new_landlord').html("<%= j render 'shared/landlord_form', lease: @lease, landlord: @landlord %>");
-<% else %>
-  // Create a paragraph for the new landlord. But hide it.
-  var new_landlord = $("<%= j render 'landlords/edit', landlord: @landlord %>").hide();
-  // Add it to the DOM, at the end of the existing landlords. It's still hidden.
-  $('#landlords').append(new_landlord);
-  // Show the new landlord with an animation!
-  new_review.slideDown();
-  // Reset the form
-  $('#new_landlord').html("<%= j render 'shared/landlord_form', lease: @lease, landlord: Landlord.new %>");
+
 <% end %>

@@ -21,16 +21,16 @@
 
   <div class="row">
     <div class="large-4 columns">
-      <%= f.input :zip, label: 'Prénom' %>
+      <%= f.input :zip, label: 'Zip' %>
     </div>
     <div class="large-8 columns">
-       <%= f.input :locality, label: 'Nom' %>
+       <%= f.input :locality, label: 'Locality' %>
     </div>
   </div>
 
   <div class="row">
     <div class="large-6 columns">
-       <%= f.input :type, collection: ['Maison','Appartement'] %>
+       <%= f.input :property_type, collection: ['Maison','Appartement'] %>
     </div>
   </div>
 

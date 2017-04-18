@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'landlords/create'
 
   root to: 'leases#new'
   resources :leases, only: [:new, :create, :show, :edit, :update]

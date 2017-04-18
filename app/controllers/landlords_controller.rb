@@ -2,11 +2,11 @@ class LandlordsController < ApplicationController
   def create
     @lease = Lease.find(params[:lease_id])
     @landlord = Landlord.new(landlord_params)
-    @landlord.lease = @lease
 
     if @landlord.save
+      @lease.update(landlord_id: @landlord)
       respond_to do |format|
-        format.html { redirect_to lease_path(@lease) }
+        format.html { redirect_to edit_lease_path(@lease) }
         format.js  # <-- will render `app/views/landlords/create.js.erb`
       end
     else
