@@ -4,7 +4,8 @@ class LandlordsController < ApplicationController
     @landlord = Landlord.new(landlord_params)
 
     if @landlord.save
-      @lease.update(landlord_id: @landlord)
+      @lease.landlord =  @landlord
+      @lease.save
       respond_to do |format|
         format.html { redirect_to edit_lease_path(@lease) }
         format.js  # <-- will render `app/views/landlords/create.js.erb`

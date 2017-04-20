@@ -3,7 +3,8 @@ class TenantsController < ApplicationController
     @lease = Lease.find(params[:lease_id])
     @tenant = Tenant.new(tenant_params)
     if @tenant.save
-      @lease.update(tenant_id: @tenant)
+      @lease.tenant = @tenant
+      @lease.save
       redirect_to lease_path(@lease)
     else
       render :new
