@@ -14,12 +14,12 @@
 .btn-smovehouse {
   color: white;
   padding: 10px 15px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: #6FA8DC;
+  border-radius: 2px;
+  background: #115E80;
   transition: background 0.3s ease;
   border-color: transparent;
-  margin-top: 20px;
+  margin-bottom: 8px;
+  margin-top: 50px;
 }
 .btn-smovehouse:hover {
   opacity: 1;
@@ -35,4 +35,9 @@
 
 .special-form {
   margin-top: 10px;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: center;
 }

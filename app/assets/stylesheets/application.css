@@ -15,9 +15,12 @@
  *= require foundation_and_overrides
 
  */
+@import "bootstrap-sprockets"
+@import "bootstrap"
 
 @import 'leases/index'
 @import 'shared/index'
+@import 'settings'
 body {
   font-family: 'Ubuntu', sans-serif;
 }

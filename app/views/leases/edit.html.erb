@@ -1,38 +1,41 @@
-<h1 style="margin-top: 20px;"> L'Indexation de votre loyer</h1>
+<h1 style="margin-top: 38px; margin-bottom: 50px; margin-left:13px;">Votre Indexation</h1>
+
 <div class="body-wrap">
-  <div class="result-container">
-<!--     <div class="title"> -->
-<!--       <h2 style="color: #115E80">Calcul</h2> -->
-<!--     </div> -->
-    <div class="shit-shit-shit">
-            <div class="test-design">
-              <div class="index-year">
-                  A partir de
-                  <div class="calendar">
-                    <div class="calendar-top"><%=@lease.indexation_start.split(' ')[0]%></div>
-                    <div class="calendar-bottom"><%=@lease.indexation_start.split(' ')[1]%></div>
-                  </div>
-                </div>
-            <div class="head-container">
-              <div class="sub-title">Loyer indexé</div>
-              <div class="new-rent"><%=@lease.new_rent.round(2)%>€</div>
-            </div>
-            </div>
-
-            <div class="edit-buttons">
-                <div>
-                  Indice <%=Date::MONTHNAMES[@lease.signature_month]%> <%=@lease.signature_year%>: <%=@lease.sign_index%>
-                </div>
-                <div class="second-terms">
-                    Indice Actuel: <%=@lease.current_index%>
-                </div>
-
-
-            </div>
-            <!-- <button class="submit-btn">Recevoir la lettre par email</button> -->
+  <div class="results">
+    <div class="new-rent-2"><%=@lease.new_rent.round(2)%>€</div>
+    <div class="sub-title-2">Loyer indexé</div>
+    <div class="flex-items">
+      <div class="index-from">
+        <div class="index-year">
+          A partir de
+          <div class="calendar">
+            <div class="calendar-top"><%=@lease.indexation_start.split(' ')[0]%></div>
+            <div class="calendar-bottom"><%=@lease.indexation_start.split(' ')[1]%></div>
+          </div>
+        </div>
+      </div>
+      <div class="current-index">
+        <div class="new-index">
+          <%=@lease.current_index%>
+        </div>
+        <div class="sub-title-3">Indice Actuel</div>
+      </div>
+      <div class="old-index">
+        <div class="new-index">
+          <%=@lease.sign_index%>
+        </div>
+        <div class="sub-title-3">Indice Signature</div>
+      </div>
+      <div class="pdf-it">
+        <div class="button-center">
+          <button class="btn-smovehouse open-first">Générez un pdf</button>
+        </div>
+        <div class="sub-title-3"> Notification pour votre locataire </div >
+      </div>
     </div>
   </div>
 </div>
+
 
 
 
@@ -40,6 +43,61 @@
 <div class="form-container-2">
   <%=render 'shared/index_form'%>
 </div>
-<!-- <div class="button-center">
-  <button class="btn-smovehouse" >#JustSmoveIt</button>
-</div> -->
+
+  <!-- FIRST MODAL -->
+  <div class='reveal-modal' id='first-modal' data-reveal>
+
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close close-reveal-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Vos Informations</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-container-2">
+                    <%=render 'shared/landlord_form'%>
+                  </div>
+                  <!-- Button trigger modal -->
+                  <a class='open-second'>Click me!</a>
+                </div>
+              </div>
+            </div>
+  </div>
+
+
+  <!-- SECOND MODAL -->
+  <div class='reveal-modal' id='second-modal' data-reveal>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close close-reveal-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Les informations de votre locataire</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-container-2">
+            <%=render 'shared/tenant_form'%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    $('.open-first').on('click', function() {
+      var popup = new Foundation.Reveal($('#first-modal'));
+      popup.open();
+      $('.close-reveal-modal').on('click', function() {
+        popup.close();
+      });
+    });
+    $('.open-second').on('click', function() {
+      var popup = new Foundation.Reveal($('#second-modal'));
+      popup.open();
+      $('.close-reveal-modal').on('click', function() {
+        popup.close();
+      });
+    });
+
+  </script>
+

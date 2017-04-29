@@ -1,0 +1,5 @@
+<% if @landlord.errors.any? %>
+  // Render new landlord form with errors
+  $('#new_landlord').html("<%= j render 'shared/landlord_form', lease: @lease, landlord: @landlord %>");
+
+<% end %>

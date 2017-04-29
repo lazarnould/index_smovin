@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
   root to: 'leases#new'
-  resources :leases, only: [:new, :create,:edit, :update, :show]
+  resources :leases, only: [:new, :create, :show, :edit, :update]
+  resources :leases, only: [:edit, :update] do
+    resources :tenants, only:[:create]
+    resources :landlords, only: [:create]
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
